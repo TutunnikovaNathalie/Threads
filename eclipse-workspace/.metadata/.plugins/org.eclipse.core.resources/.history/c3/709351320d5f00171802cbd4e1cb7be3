@@ -1,0 +1,46 @@
+package ru.specialist.threadstart;
+
+import static java.lang.System.out;
+
+class MyThread extends Thread
+{
+	
+	
+	public MyThread(String name) {
+		super(name);
+	}
+
+	@Override
+	public void run() {
+	
+		for(int i=1; i <= 100; i++)
+			out.printf("%s : %d\n",this.getName(), i);	
+	}
+}
+
+class MySuperThread implements Runnable
+{
+	@Override
+	public void run() {
+	
+		for(int i=1; i <= 100; i++)
+			out.printf("%s : %d\n","C", i);	
+	}
+	
+}
+public class Program {
+
+	public static void main(String[] args) {
+		Thread t1 = new MyThread("A");
+		Thread t2 = new MyThread("B");
+		
+		Thread t3 = new Thread(new MySuperThread);
+		t1.start();
+		t2.start();
+		t3.start();
+		
+		out.println(Thread.currentThread().getName());
+
+	}
+
+}

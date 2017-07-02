@@ -1,0 +1,13 @@
+package ru.specialist.processstart;
+
+import java.io.IOException;
+
+public class Program {
+
+	public static void main(String[] args) throws IOException {
+		System.out.println("Process start...");
+		Runtime.getRuntime().exec("cmd /C dir c:\\");
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package ru.specialist.processstart;
+
+import java.io.*;
+
+public class Program {
+
+	public static void main(String[] args) throws IOException {
+		System.out.println("Process start...");
+		Process p = Runtime.getRuntime().exec("cmd /C dir c:\\");
+		InputStream in = p.getInputStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		String s;
+		while((s= reader.readLine())!=null)
+		{
+			System.out.println(s);
+		}
+	}
+
+}

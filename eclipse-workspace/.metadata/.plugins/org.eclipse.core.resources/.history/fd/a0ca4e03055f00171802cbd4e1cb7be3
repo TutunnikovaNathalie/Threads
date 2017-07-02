@@ -1,0 +1,11 @@
+package ru.specialist.processstart;
+
+public class Program {
+
+	public static void main(String[] args) {
+		System.out.println("Process start...");
+		Runtime.getRuntime().exec("explorer.exe");
+
+	}
+
+}

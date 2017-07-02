@@ -1,0 +1,23 @@
+package ru.specialist.join;
+
+import static java.lang.System.out;
+public class Program {
+
+	public static void main(String[] args) {
+		Thread t1, t2;
+		
+		(t1 = new Thread(()-> {
+			for(int i=1; i <= 100; i++)
+				out.printf("%s : %d\n",Thread.currentThread(), i);	
+		}, "A")).start();
+		
+		(t2 = new Thread(()-> {
+			for(int i=1; i <= 100; i++)
+				out.printf("%s : %d\n",Thread.currentThread(), i);	
+		}, "B")).start();
+		
+		out.println(Thread.currentThread().getName()); 
+
+	}
+
+}
